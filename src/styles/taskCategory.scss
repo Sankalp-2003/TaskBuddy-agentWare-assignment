@@ -1,0 +1,118 @@
+@import '../styles/main.scss';
+
+.taskCategory{
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  @include mobile{
+    padding: 0 10px;
+  }
+  .taskCategory__head{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .taskCategory__body{
+    
+    .addTask__option{
+      padding: 0 40px;
+      background-color: #F1F1F1;
+      border-bottom: 1px solid #dadada;
+      @include mobile{
+        display: none;
+      }
+      p{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+      .addTask__option__form{
+        border-top: 1px solid #dadada;
+        height: 80px;
+        form{
+          position: relative;
+          height: 50%;
+          display: flex;
+          align-items: center;
+          :nth-child(1){
+            margin-right: 10vw;
+          }
+          :nth-child(2){
+            margin-right: 18vw;
+          }
+          :nth-child(3){
+            margin-right: 22vw;
+          }
+          .taskTitle{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 18px;
+          }
+          .custom-date-picker{
+            cursor: pointer;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            color: gray;
+            border-radius: 30px;
+            border: 1px solid #dadada;
+            font-size: 14px;
+            p{
+              margin: unset;
+            }
+          }
+          .hidden-date-input{
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+          }
+          select{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: transparent;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+          }
+          select option {
+           background-color: #FFF9F9;
+           padding: 20px;
+          }
+        }
+        .addTask__option__bottom{
+          button{
+            margin-right: 10px;
+            padding: 5px 20px;
+            border: 1px solid #dadada;
+            border-radius: 20px;
+          }
+          .add-btn{
+            background-color: #7B1984;
+            color: #fff;
+            
+            border: none;
+          }
+        }
+      }
+    }
+    .no__tasks{
+      background-color: #F1F1F1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+}
