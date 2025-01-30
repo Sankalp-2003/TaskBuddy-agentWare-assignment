@@ -1,0 +1,9 @@
+@import '../styles/main.scss';
+
+.dashBoard{
+  padding: 30px 30px;
+  overflow-x: hidden;
+  @include mobile{
+    padding: unset;
+  }
+}

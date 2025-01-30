@@ -1,0 +1,27 @@
+@import '../styles/main.scss';
+
+.taskList{
+  margin-top: 30px;
+  border-top: 1px solid #dadada;
+  @include mobile{
+    margin-top: 20px;
+  }
+  .head{
+    display: flex;
+    padding: 10px 20px;
+    color: gray;
+    font-weight: bold;
+    @include mobile{
+      display: none;
+    }
+    :nth-child(1){
+      margin-right: 35vw;
+    }
+    :nth-child(2){
+      margin-right: 14vw;
+    }
+    :nth-child(3){
+      margin-right: 12vw;
+    }
+  }
+}

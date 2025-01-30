@@ -1,0 +1,170 @@
+@import '../styles/main.scss';
+
+.navbar{
+  width: 100%;
+  
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mobile{
+      background-color: #fff9f9;
+    }
+    @include mobile{
+      height: 60px;
+      width: 100%;
+      padding: 0 20px;
+    }
+    .left{
+      h4{
+        font-size: 22px;
+        font-weight: unset;
+        margin-bottom: 30px;
+        @include mobile{
+          margin-bottom: unset;
+        }
+      }
+      .icon{
+        @include mobile{
+          display: none;
+        }
+      }
+      
+      .links{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include mobile{
+          display: none;
+        }
+        p{
+          font-size: 18px;
+          gap: 3px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .right{
+      .profile{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        @include mobile{
+          justify-content: end;
+          margin-bottom: unset;
+        }
+        .dp{
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          overflow: hidden;
+          img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        p{
+          font-size: 18px;
+          text-transform: capitalize;
+          @include mobile{
+            display: none;
+          }
+        }
+      }
+      .logout-btn{
+        background-color: #fff9f9;
+        border: 1px solid gray;
+        border-radius: 10px;
+        height: 30px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        @include mobile{
+          display: none;
+        }
+      }
+    }
+  }
+  .bottom{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    @include mobile{
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
+    
+    .filter{
+      display: flex;
+      gap: 10px;
+      .select__wrapper{
+        display: flex;
+        gap: 10px;
+      }
+      @include mobile{
+      flex-direction: column;
+      gap: 5px;
+      }
+      p{
+        font-size: 14px;
+        color: gray;
+      }
+      select{
+        padding: 3px 5px;
+        border-radius: 20px;
+        outline: none;
+      }
+    }
+    .right{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .searchBar{
+        position: relative;
+        display: flex;
+        padding: 0 10px;
+        height: 40px;
+        width: 158px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        overflow: hidden;
+        @include mobile{
+          width: 95vw;
+        }
+        input{
+          height: 100%;
+          width: 85%;
+          border: none;
+          outline: none;
+          font-size: 18px;
+        }
+        .icon{
+          height: 100%;
+          width: 15%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .addTask-btn{
+        padding: 10px 20px;
+        background-color: #7b1984;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 12px;
+        @include mobile{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+      }
+    }
+  }
+}
