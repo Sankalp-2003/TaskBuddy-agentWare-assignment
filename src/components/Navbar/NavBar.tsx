@@ -5,7 +5,14 @@ import Button from "../UI/Button";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import FilterBar from "../Filters/FilterBar";
 import SearchBar from "../Filters/SearchBar";
-const NavBar = () => {
+import { Link, useLocation } from "react-router-dom";
+
+type NavBarProps = {
+  setCreateTask: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const NavBar: React.FC<NavBarProps> = ({ setCreateTask }) => {
+  const location = useLocation();
   return (
     <div className="navbar">
       <div className="top">
@@ -14,12 +21,18 @@ const NavBar = () => {
             <FaClipboardList className="icon" /> TaskBuddy
           </h4>
           <div className="links">
-            <p>
-              <CiViewList /> List
-            </p>
-            <p>
-              <CiKeyboard /> Board
-            </p>
+            <Link to="/">
+              <p className={location.pathname === "/" ? "active-link" : ""}>
+                <CiViewList /> List
+              </p>
+            </Link>
+            <Link to="board">
+              <p
+                className={location.pathname === "/board" ? "active-link" : ""}
+              >
+                <CiKeyboard /> Board
+              </p>
+            </Link>
           </div>
         </div>
         <div className="right">
@@ -47,7 +60,9 @@ const NavBar = () => {
           <Button
             icon={""}
             text={"ADD TASK"}
-            onClick={() => {}}
+            onClick={() => {
+              setCreateTask(true);
+            }}
             className={"addTask-btn"}
           />
         </div>

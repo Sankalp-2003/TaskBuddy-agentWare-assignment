@@ -37,12 +37,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ type }) => {
       <div className="more__options">
         <select name="edit">
           <option hidden></option>
-          <option value="Edit">
-            <p className="opt">Edit</p>
-          </option>
-          <option value="Edit">
-            <p className="opt">Delete</p>
-          </option>
+          <option value="edit">Edit</option>
+          <option value="delete">Delete</option>
         </select>
         <BsThreeDots />
       </div>

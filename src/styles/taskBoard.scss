@@ -1,0 +1,67 @@
+@import '../styles/main.scss';
+
+.taskboard{
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  .taskBoardCategory{
+    position: relative;
+    min-height: 540px;
+    min-width: 336px;
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    .board__title{
+      display: inline-block;
+      padding:  5px 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .empty__msg{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .task__cat__item{
+      width: 100%;
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      gap: 50px;
+      .top, .bottom{
+        display: flex;
+        justify-content: space-between;
+      }
+      .top{
+        .options{
+          position: relative;
+          select{
+            position: absolute;
+            right: 0;
+            padding: 5px 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            appearance: none;
+            :nth-child(3){
+              color: red;
+            }
+          }
+        }
+      }
+      .bottom{
+        span{
+          color: gray;
+        }
+      }
+    }
+  }
+}

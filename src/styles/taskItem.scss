@@ -6,6 +6,9 @@
  display: flex;
  align-items: center;
  justify-content: space-between;
+ @include mobile{
+  
+ }
  .task__title{
   color: gray;
   display: flex;
@@ -19,6 +22,11 @@
     margin-left: 10px;
   }
  }
+ .due-date{
+  @include mobile{
+    display: none;
+  }
+ }
  .task__status{
   position: relative;
   background: rgb(196, 196, 196);
@@ -27,6 +35,9 @@
   text-transform: uppercase;
   font-size: 16px;
   border-radius: 5px;
+  @include mobile{
+    display: none;
+  }
   select{
     position: absolute;
     padding: 5px 10px;
@@ -39,10 +50,15 @@
     appearance: none;
   }
  }
+ .task__category{
+  display: none;
+}
  :nth-last-child(1){
+  
   select{
     position: absolute;
     right: 50px;
+    font-size: 18px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -53,6 +69,7 @@
       color: red;
     }
   }
+  
  
   p{
     padding: 5px 10px;

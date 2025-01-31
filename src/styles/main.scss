@@ -25,6 +25,9 @@ button{
 select{
   cursor: pointer;
 }
+option{
+  background-color: #FFF9F9;
+}
 
 @mixin mobile{
   @media (max-width:850px) {

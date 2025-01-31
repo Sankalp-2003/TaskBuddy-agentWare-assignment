@@ -1,11 +1,9 @@
-
-
-import React from 'react';
-import '../../styles/button.scss'
+import React from "react";
+import "../../styles/button.scss";
 
 type ButtonProps = {
   text: string;
-  onClick?: () => void ; 
+  onClick?: () => void;
   className?: string;
   icon: any | undefined;
 };
@@ -13,7 +11,8 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({ icon, text, onClick, className }) => {
   return (
     <button className={`btn ${className}`} onClick={onClick}>
-      {icon ? icon : null}{text}
+      {icon ? icon : null}
+      {text}
     </button>
   );
 };
