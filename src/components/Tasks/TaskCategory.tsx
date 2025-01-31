@@ -16,6 +16,7 @@ const TaskCategory: React.FC<TaskCategoryProp> = ({ type }) => {
   const dateInputRef = useRef<HTMLInputElement | null>(null);
   const [selectedDate, setSelectedDate] = useState("");
   const [addOption, setAddOption] = useState(false);
+  const [displayItems, setDisplayItems] = useState(true);
 
   useEffect(() => {
     if (type === "To-Do") {
@@ -32,6 +33,9 @@ const TaskCategory: React.FC<TaskCategoryProp> = ({ type }) => {
   const toggleAddOption = () => {
     setAddOption((prev) => !prev);
   };
+  const toggleDisplayItems = () => {
+    setDisplayItems((prev) => !prev);
+  };
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedDate(event.target.value);
@@ -41,7 +45,10 @@ const TaskCategory: React.FC<TaskCategoryProp> = ({ type }) => {
     <div className="taskCategory">
       <div
         style={{ backgroundColor: bgColor }}
-        onClick={toggleEmptyMsg}
+        onClick={() => {
+          toggleEmptyMsg();
+          toggleDisplayItems();
+        }}
         className="taskCategory__head"
       >
         <p>{type} (3)</p>
@@ -128,7 +135,7 @@ const TaskCategory: React.FC<TaskCategoryProp> = ({ type }) => {
             <p>No tasks in {type}</p>
           </div>
         ) : null}
-        <TaskItem type={type} />
+        {displayItems && <TaskItem type={type} />}
       </div>
     </div>
   );
